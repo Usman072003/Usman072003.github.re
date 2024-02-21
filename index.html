@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+  <div class="top">
+    CAN I AFFORD IT?...
+  </div>
+  <title>User Input Display</title>
+  
+  <style>
+    /* Center the text */
+    .center {
+      text-align: center;
+      margin-top: 100px; /* Adding some top margin for spacing */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- User input field -->
+  <div class="center">
+    <label for="amount">WHATS YOUR INCOME? :</label>
+    <input type="number" id="amount" placeholder="Enter amount">
+    <button onclick="displayAmount()">Display</button>
+  </div>
+  
+
+  <!-- Display area -->
+  <div class="center" id="displayArea">
+    <!-- The entered amount will be displayed here -->
+  </div>
+
+  <script>
+    function displayAmount() {
+    var amount = document.getElementById('amount').value;
+    localStorage.setItem('savedAmount', amount);
+      // Get the value entered by the user
+      var amount = document.getElementById('amount').value;
+
+      // Get the display area
+      var displayArea = document.getElementById('displayArea');
+
+      // Display the entered amount at the top center
+      displayArea.innerHTML = '<h2>' + amount + '</h2>';
+      console.log(amount);
+    }
+  </script>
+</body>
+</html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+  
+    
+    <div class="container">
+        <header>
+            <div class="title">WHATS YOUR DESIRE(S)?</div>
+            <div class="icon-cart">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                </svg>
+                <span>0</span>
+            </div>
+        </header>
+        <div class="listProduct">
+
+        </div>
+    </div>
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            
+        </div>
+        <div class="btn">
+          
+            <button class="close">CLOSE</button>
+            <div class="total">0</div>
+            <a href="continue.html" target="_blank">
+              <button class="checkOut">CONTINUE</button>
+            </a>
+            
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

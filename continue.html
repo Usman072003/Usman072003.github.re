@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        <h3>FINANCE IT?</h3>
+    </title>
+    <!-- Add any additional head elements here -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FINANCE IT?</h1>
+    </header>
+    <p></p>
+    
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong id="alertText">is an alert box.</strong>
+      </div>
+      
+    <!-- Header for your introduction -->
+    
+
+    <!-- Description Paragraph -->
+    <section>
+        <p> You have a option of financing your total amount whether it is recommended or not, or you can buy it out instead.</p>
+    </section>
+
+<div class="grid-container">
+    <div class="box">
+        <div class="formBox">
+            <form id="incomeForm">
+                <label for="income">Enter your income:</label><br>
+                <input type="number" id="income" name="income" required><br>
+                <input type="submit" value="Submit">
+            </form>
+            <form id="taxForm">
+                <label for="tax">Enter your State-Tax:</label><br>
+                <input type="float" id="tax" name="tax" required><br>
+                <input type="submit" value="Submit">
+            </form>
+            
+        
+        </div>
+
+    </div>
+    <div class="box">
+        <div class="displayBox">
+            <div id="cartValueDisplay">Total Cart Value: $0</div>
+            <div id="incomeDisplay">Annual income: $0</div>
+            <div id="taxDisplay">State tax: %0</div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+// In your JavaScript
+window.onload = function() {
+    var totalCartValue = localStorage.getItem('totalCartValue') || '0';
+    document.getElementById('cartValueDisplay').innerText = 'Total Cart Value: $' + totalCartValue;
+};
+window.onload = function() {
+    var income = localStorage.getItem('income') || '0';
+    document.getElementById('income').innerText = 'Annual income: $' + income;
+};
+window.onload = function() {
+    var tax = localStorage.getItem('tax') || '0';
+    document.getElementById('tax').innerText = 'State tax: ' + tax;
+};
+</script>
+
+
+    
+    <!-- Additional content goes here -->
+    
+    
+        <!-- Form for input -->
+        
+    
+        <!-- Placeholder for the confirmation message -->
+        <p id="confirmationMessage"></p>
+    
+        <!-- JavaScript to handle the form submission -->
+        <script>
+            document.getElementById("incomeForm").onsubmit = function(event) {
+                event.preventDefault(); // Prevents the form from submitting in the traditional way
+    
+                // Get the income value from the form
+                var income = document.getElementById("income").value;
+    
+                // Store it locally (for example, in localStorage for later use)
+                localStorage.setItem("userIncome", income);
+    
+                // Update the confirmation message
+                document.getElementById("confirmationMessage").innerText = "Your income has been saved: $" + income;
+                
+                document.getElementById('incomeDisplay').innerText = 'Your income is: ' + income;
+
+    
+                // Add any additional actions you want to perform after form submission
+            };
+        </script>
+        
+        <p id="taxMessege"></p>
+        <script>
+            document.getElementById("taxForm").onsubmit = function(event) {
+                event.preventDefault(); // Prevents the form from submitting in the traditional way
+    
+                // Get the income value from the form
+                var tax = document.getElementById("tax").value;
+    
+                // Store it locally (for example, in localStorage for later use)
+                localStorage.setItem("userTax", tax);
+                document.getElementById('taxDisplay').innerText = 'State tax: %' + tax;
+    
+                // Update the confirmation message
+                
+
+    
+                // Add any additional actions you want to perform after form submission
+            };
+        </script>
+        <p></p>
+        
+
+        
+        
+
+        <button class="Purchase">Purchase Price </button>
+        <a href="finance.html">
+            <button class="Finance">Finance It</button>
+        </a>
+
+        <script src="continuejs.js"></script>
+    
+    </body>
+    </html>
